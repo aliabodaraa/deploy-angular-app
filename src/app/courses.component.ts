@@ -8,11 +8,19 @@ import { CoursesService } from './courses.service';
       <li *ngFor="let course of courses">
         {{ course }}
       </li>
+      <button class="btn btn-danger" [class.active]="isActive">CLICK ME</button>
+      <button
+        class="btn btn-danger"
+        [style.backgroundColor]="isActive ? 'green' : 'red'"
+      >
+        CLICK ME
+      </button>
     </ul>
   `,
 })
 export class CoursesComponent {
   title = 'List of course';
+  isActive = true;
   courses;
 
   getTitle() {
