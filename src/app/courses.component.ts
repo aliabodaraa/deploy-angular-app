@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CourseService } from './courses.service';
+import { CoursesService } from './courses.service';
 @Component({
   selector: 'courses',
   template: `
@@ -18,8 +18,8 @@ export class CoursesComponent {
   getTitle() {
     return this.title;
   }
-  constructor() {
-    let service = new CourseService(); //instansiation here is tightly coupled whereas in the fucture will get a problem when you decide to add param to this class' constructor then you will need to edit all instansiations statement and anywhere else in your application whrere you have use this service and add a new argument nad that is a fragile
+  constructor(service: CoursesService) {
+    //dependency injection then here when you edit the server constructoe and add a new param will not wdit outside the service class to reflected the change- angular automatically instansiate new CourseService object another benifets to this approch is when you go to unit tests for coursesComponents intead of suppling the accual coursesService to this constructor we can create a fake implementation of this srervice that does not use httpService on the backend
     this.courses = service.getCourse();
   }
 }
