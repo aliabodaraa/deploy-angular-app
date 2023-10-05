@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CoursesService } from './courses.service';
-import { NodeEventHandler } from 'rxjs/internal/observable/fromEvent';
 @Component({
   selector: 'courses',
   template: `
@@ -10,6 +9,7 @@ import { NodeEventHandler } from 'rxjs/internal/observable/fromEvent';
       </li>
     </ul>
     <ul class="person-info">
+      <li>CUSTOM PIPE : {{ peson.text | summary }}</li>
       <li>{{ peson.name | uppercase }}</li>
       <li>{{ peson.lname }}</li>
       <li>{{ peson.job }}</li>
@@ -45,6 +45,7 @@ export class CoursesComponent {
       myNumber: 12.4265,
       price: 190.97,
       releaseDate: new Date(2023, 3, 12),
+      text: 'asasd sdf sdf  sdf sd f sdf sdf sdf sd f sdf s f sdf sd fsd f sd fsd f sdf sdfsdf sdf sdf sd f sdf s df sdf dsf',
     };
     //dependency injection then here when you edit the server constructoe and add a new param will not wdit outside the service class to reflected the change- angular automatically instansiate new CourseService object another benifets to this approch is when you go to unit tests for coursesComponents intead of suppling the accual coursesService to this constructor we can create a fake implementation of this srervice that does not use httpService on the backend
     this.courses = service.getCourse();
