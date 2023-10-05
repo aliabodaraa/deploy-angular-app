@@ -1,4 +1,14 @@
 <hr>
 <h1 class="bg-danger">Angular APP</h1>
-<app-boostrap-panel [InputHeadingProp]="heading" [InputBodyProp]="body" (outputValue)="onTitleChange($event)"></app-boostrap-panel>
+<!-- class heading and body uses as selectors in the child panel so you don't need a selector if you have only one ng-content -->
+<app-boostrap-panel (outputValue)="onTitleChange($event)">
+    <div class="heading">
+        <h3>heading</h3>
+        <p>heading text</p>
+    </div>
+    <div class="body">
+        <h3>body</h3>
+        <p>body text</p>
+    </div>
+</app-boostrap-panel>
 <hr>

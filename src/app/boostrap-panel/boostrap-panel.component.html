@@ -1,5 +1,5 @@
 <div class="panel panel-dark">
-    <div class="panel-heading">{{passedHeadingValue}}</div>
-    <div class="panel-body">{{passedBodyValue}}</div>
+    <div class="panel-heading"><ng-content select=".heading"></ng-content></div>
+    <div class="panel-body"><ng-content select=".body"></ng-content></div>
     <button class="btn btn-warning" (click)="onClick()">Click Emitter</button>
 </div>
