@@ -7,5 +7,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
   // encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  title = 'hello_world';
+  heading = 'Heading From Parent';
+  body = 'body From Parent';
+
+  onTitleChange($data: object) {
+    console.log('Title have just changed now', $data);
+  }
 }
