@@ -17,16 +17,15 @@ export class AppComponent {
     console.log('Title have just changed now', $data);
   }
   currentTab = 'tab1';
-  courses: courseType[] = [
-    { id: 1, name: 'course1' },
-    { id: 2, name: 'course2' },
-    { id: 3, name: 'course3' },
-  ];
-  onAdd() {
-    this.courses.push({ id: 4, name: 'course 4 (new)' });
+  courses: courseType[] = [];
+  loadCourses() {
+    this.courses = [
+      { id: 1, name: 'course1' },
+      { id: 2, name: 'course2' },
+      { id: 3, name: 'course3' },
+    ];
   }
-  onRemove(course: courseType) {
-    let index = this.courses.indexOf(course);
-    this.courses.splice(index, 1);
+  onTrack(index: number, course: courseType) {
+    return course ? course.id : undefined;
   }
 }
