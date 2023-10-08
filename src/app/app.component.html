@@ -13,18 +13,5 @@
         {{course.name}}
     </li>
 </ul>
-
-<h1 class="bg-danger">Angular APP</h1>
-<!-- class heading and body uses as selectors in the child panel so you don't need a selector if you have only one ng-content -->
-<app-boostrap-panel (outputValue)="onTitleChange($event)">
-    <!-- here the div that has class heading will be replaced in the panel child where the selector heading exist,so if you don't need the div "heading to show you can use ng-container as following" -->
-    <ng-container class="heading">
-        <h3>heading</h3>
-        <p>heading text</p>
-    </ng-container>
-    <div class="body">
-        <h3>body</h3>
-        <p>body text</p>
-    </div>
-</app-boostrap-panel>
-<hr>
+<!-- <input appInputFormat [Format]="'lowercase'"> multiple param syntax -->
+<input [appInputFormat]="'uppercase'"><!--  one param syntax -->
