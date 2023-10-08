@@ -1,4 +1,12 @@
 <hr>
+<ul class="nav nav-pills">
+    <li class="active"><a (click)="currentTab='tab1'">Tab1</a></li>
+    <li><a (click)="currentTab='tab2'">Tab2</a></li>
+</ul>
+<div [ngSwitch]="currentTab">
+    <div *ngSwitchCase="'tab1'">Tab1 content</div>
+    <div *ngSwitchCase="'tab2'">Tab2 content</div>
+</div>
 <h1 class="bg-danger">Angular APP</h1>
 <!-- class heading and body uses as selectors in the child panel so you don't need a selector if you have only one ng-content -->
 <app-boostrap-panel (outputValue)="onTitleChange($event)">

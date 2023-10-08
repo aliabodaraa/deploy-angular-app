@@ -13,4 +13,5 @@ export class AppComponent {
   onTitleChange($data: object) {
     console.log('Title have just changed now', $data);
   }
+  currentTab = 'tab1';
 }
