@@ -8,7 +8,11 @@ import { SignUpCustomValidator } from './signup.validators';
 })
 export class SignupReactiveFormComponent {
   form = new FormGroup({
-    username: new FormControl('', Validators.required), //the second param is validatorFn | valiudatorFn[]  required is just a reference to the function required()
+    username: new FormControl(
+      '',
+      Validators.required,
+      SignUpCustomValidator.shouldBeUniqueAsync
+    ), //the second param is validatorFn | valiudatorFn[]  required is just a reference to the function required()
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(4), //here we not calling the method in the sence of performing some kind of validation we are calling this with an argument to get the validator function

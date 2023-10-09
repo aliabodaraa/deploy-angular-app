@@ -8,4 +8,14 @@ export class SignUpCustomValidator {
       };
     return null;
   }
+  static shouldBeUniqueAsync(
+    control: AbstractControl
+  ): Promise<ValidationErrors | null> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'ali') resolve({ shouldBeUniqueAsync: true });
+        else resolve(null);
+      }, 2000);
+    });
+  }
 }

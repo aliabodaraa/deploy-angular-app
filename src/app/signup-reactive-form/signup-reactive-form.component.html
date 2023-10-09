@@ -9,7 +9,11 @@
         name="username" 
         id="username">
     </div>
-    <div *ngIf="accessUserName?.touched && accessUserName?.invalid" class="alert alert-danger">User Name is Required</div>
+    <div *ngIf="accessUserName?.touched && accessUserName?.invalid" class="alert alert-danger">
+        <div *ngIf="accessUserName?.errors?.['required']">Username is Required</div>
+        <!-- Custom Async Directive -->
+        <div *ngIf="accessUserName?.errors?.['shouldBeUniqueAsync']">Should Be Unique Async</div>
+    </div>
     <div class="form-group">
         <label for="password" class="Password">Password</label>
         <input
