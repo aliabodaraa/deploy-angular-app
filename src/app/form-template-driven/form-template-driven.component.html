@@ -1,5 +1,5 @@
 <form ngForm #f="ngForm" (ngSubmit)="onSubmit(f)">
-    <div ngModelGroup="contact">
+    <div ngModelGroup="contact" #contactGroup="ngModelGroup">
         <div class="mb-3">
             <label for="" class="form-label">First Name</label>
             <input type="text"
@@ -25,6 +25,10 @@
                     <div *ngIf="firstName.errors['pattern']">FirstName does not match the pattern</div>
                     <div *ngIf="firstName.errors['minlength']">FirstName should be minimum 3 characters</div>
                 </div>
+        </div>
+        <!-- validate the group as whole -->
+        <div *ngIf="!contactGroup.valid">
+            ........
         </div>
     </div>
 
