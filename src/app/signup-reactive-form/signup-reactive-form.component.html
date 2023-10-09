@@ -1,0 +1,28 @@
+
+<form [formGroup]="form">
+    <div class="form-group">
+        <label for="username" class="form-label">User Name</label>
+        <input
+        formControlName="username"
+        type="text" 
+        class="form-control" 
+        name="username" 
+        id="username">
+    </div>
+    <div *ngIf="accessUserName?.touched && accessUserName?.invalid" class="alert alert-danger">User Name is Required</div>
+    <div class="form-group">
+        <label for="password" class="Password">Password</label>
+        <input
+        formControlName="password"
+        type="password" 
+        class="form-control" 
+        name="password" 
+        id="password">
+    </div>
+    <div *ngIf="accessPassword?.touched && accessPassword?.invalid" class="alert alert-danger">
+        <div *ngIf="accessPassword?.errors?.['required']">Password is Required</div>
+        <div *ngIf="accessPassword?.errors?.['minlength']">Password should be minimum {{accessPassword?.errors?.['minlength']?.requiredLength}} characters</div>
+    </div>
+
+    <button type="submit">Login</button>
+</form>
