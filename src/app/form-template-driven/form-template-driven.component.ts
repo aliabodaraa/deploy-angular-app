@@ -14,4 +14,8 @@ export class FormTemplateDrivenComponent {
   onSubmit(s: NgForm) {
     console.log(s);
   }
+  contactMethods = [
+    { id: 1, name: 'Email' },
+    { id: 2, name: 'Phone' },
+  ];
 }

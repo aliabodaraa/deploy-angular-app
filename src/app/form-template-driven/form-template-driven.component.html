@@ -64,6 +64,20 @@
             <input type="checkbox" ngModel name="subscribe"> Subscribe to mailing list
         </label>
     </div>
+    <div class="form-group">
+        <label for="contactMethod">contact Method</label>
+        <select ngModel name="contactMethod" id="contactMethod" class="form-control">
+            <!-- <option value=""></option> -->
+            <option *ngFor="let method of contactMethods" [value]="method.id">{{method.name}}</option>
+        </select>
+    </div>
+    <!-- note : here the value is the id of the slected method if i need to make the valuse object instead of string we shoud use ngValue attribute directive to bind this to complex object -->
+    <!-- <div class="form-group">
+        <label for="contactMethod">contact Method</label>
+        <select ngModel name="contactMethod" id="contactMethod" class="form-control">
+            <option *ngFor="let method of contactMethods" [ngValue]="method">{{method.name}}</option>
+        </select>
+    </div> -->
     <p>
         {{f.value | json}}
     </p>
