@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { SignUpCustomValidator } from './signup.validators';
 @Component({
   selector: 'app-signup-reactive-form',
   templateUrl: './signup-reactive-form.component.html',
@@ -11,6 +12,7 @@ export class SignupReactiveFormComponent {
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(4), //here we not calling the method in the sence of performing some kind of validation we are calling this with an argument to get the validator function
+      SignUpCustomValidator.cannotContainSpace,
     ]),
   });
 

@@ -22,6 +22,8 @@
     <div *ngIf="accessPassword?.touched && accessPassword?.invalid" class="alert alert-danger">
         <div *ngIf="accessPassword?.errors?.['required']">Password is Required</div>
         <div *ngIf="accessPassword?.errors?.['minlength']">Password should be minimum {{accessPassword?.errors?.['minlength']?.requiredLength}} characters</div>
+        <!-- Custom Directive -->
+        <div *ngIf="accessPassword?.errors?.['cannotContainSpace']">cannot contain  space</div>
     </div>
 
     <button type="submit">Login</button>
