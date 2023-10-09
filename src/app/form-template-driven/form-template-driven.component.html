@@ -1,4 +1,4 @@
-<form>
+<form ngForm #f="ngForm" (ngSubmit)="onSubmit(f)">
     <div class="mb-3">
         <label for="" class="form-label">First Name</label>
         <input type="text"
@@ -10,20 +10,47 @@
           (change)="log(firstName)"
           aria-describedby="helpId" 
           placeholder=""
-          pattern="ali abodaraa"
+          pattern="ali"
           minlength="3"
           maxlength="10"
           required
           >
+          <div *ngIf="firstName.errors && 
+          firstName.touched && 
+          !firstName.valid"
+            class="alert alert-danger"
+            >
+                <div *ngIf="firstName.errors['required']">FirstName is required</div>
+                <div *ngIf="firstName.errors['pattern']">FirstName does not match the pattern</div>
+                <div *ngIf="firstName.errors['minlength']">FirstName should be minimum 3 characters</div>
+            </div>
+    </div>
+
+      <div class="mb-3">
+        <label for="" class="form-label">Last Name</label>
+        <input type="text"
+          class="form-control" 
+          ngModel
+          name="lastName"
+          id="lastName"
+          #lastName="ngModel" 
+          (change)="log(lastName)"
+          aria-describedby="helpId" 
+          placeholder=""
+          pattern="abodaraa"
+          minlength="3"
+          maxlength="10"
+          required
+          >
+          <div *ngIf="lastName.errors && 
+          lastName.touched && 
+          !lastName.valid"
+          class="alert alert-danger"
+            >
+                <div *ngIf="lastName.errors['required']">lastName is required</div>
+                <div *ngIf="lastName.errors['pattern']">lastName does not match the pattern</div>
+                <div *ngIf="lastName.errors['minlength']">lastName should be minimum 3 characters</div>
+            </div>
       </div>
-      <div 
-      *ngIf="firstName.errors && 
-            firstName.touched && 
-            !firstName.valid"
-      class="alert alert-danger"
-      >
-            <div *ngIf="firstName.errors['required']">FirstName is required</div>
-            <div *ngIf="firstName.errors['pattern']">FirstName does not match the pattern</div>
-            <div *ngIf="firstName.errors['minlength']">FirstName should be minimum 3 characters</div>
-      </div>
+      <button type="submit">Submit</button>
 </form>

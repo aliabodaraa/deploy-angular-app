@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-form-template-driven',
@@ -10,5 +10,8 @@ import { NgModel } from '@angular/forms';
 export class FormTemplateDrivenComponent {
   log(firstNameFieldTemplateVariable: NgModel) {
     console.log(firstNameFieldTemplateVariable);
+  }
+  onSubmit(s: NgForm) {
+    console.log(s);
   }
 }
