@@ -6,6 +6,7 @@ import { BoostrapPanelComponent } from './boostrap-panel/boostrap-panel.componen
 import { InputFormatDirective } from './input-format.directive';
 import { FormTemplateDrivenComponent } from './form-template-driven/form-template-driven.component';
 import { SignupReactiveFormComponent } from './signup-reactive-form/signup-reactive-form.component';
+import { AddNewCourseUsingFormArrayComponent } from './add-new-course-using-form-array/add-new-course-using-form-array.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,6 +14,7 @@ import { SignupReactiveFormComponent } from './signup-reactive-form/signup-react
     InputFormatDirective,
     FormTemplateDrivenComponent,
     SignupReactiveFormComponent,
+    AddNewCourseUsingFormArrayComponent,
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],
