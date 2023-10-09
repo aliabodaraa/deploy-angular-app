@@ -26,4 +26,13 @@ export class SignupReactiveFormComponent {
   get accessPassword() {
     return this.form.get('password');
   }
+  login() {
+    // imagine there is a service call login in this point of code
+    // let isValid = serviceAuth?.login(this.form.value);
+    // if (isValid) {
+    //   this.form.setErrors({ invalidLogin: true });
+    // }
+    console.log(this.form);
+    this.form.setErrors({ invalidLogin: true });
+  }
 }

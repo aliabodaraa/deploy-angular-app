@@ -1,5 +1,9 @@
 
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="login()">
+    <!-- Form Level Errors Validations-->
+    <div *ngIf="form.errors?.['invalidLogin']" class="alert alert-warning">
+        the username or password is invalid
+    </div>
     <div class="form-group">
         <label for="username" class="form-label">User Name</label>
         <input
