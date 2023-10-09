@@ -58,5 +58,5 @@
                 <div *ngIf="lastName.errors['minlength']">lastName should be minimum 3 characters</div>
             </div>
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" [disabled]="!f.valid">Submit</button>
 </form>
