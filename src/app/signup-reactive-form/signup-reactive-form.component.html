@@ -9,6 +9,8 @@
         name="username" 
         id="username">
     </div>
+    <!-- show message will the uniqueness proccess is processing, any formControl Object has a property called "pending" that will return true if at least one asyncValidator is in progress-->
+    <div *ngIf="accessUserName?.pending">Checking for uniqueness ...</div>
     <div *ngIf="accessUserName?.touched && accessUserName?.invalid" class="alert alert-danger">
         <div *ngIf="accessUserName?.errors?.['required']">Username is Required</div>
         <!-- Custom Async Directive -->
