@@ -1,20 +1,3 @@
 <hr>
-<!-- <ul class="nav nav-pills">
-    <li class="active"><a (click)="currentTab='tab1'">Tab1</a></li>
-    <li><a (click)="currentTab='tab2'">Tab2</a></li>
-</ul>
-<div [ngSwitch]="currentTab">
-    <div *ngSwitchCase="'tab1'">Tab1 content</div>
-    <div *ngSwitchCase="'tab2'">Tab2 content</div>
-</div>
-<button (click)="loadCourses()">load courses</button>
-<ul>
-    <li *ngFor="let course of courses; trackBy : onTrack">
-        {{course.name}}
-    </li>
-</ul> -->
-<!-- <input appInputFormat [Format]="'lowercase'"> multiple param syntax -->
-<input [appInputFormat]="'uppercase'"><!--  one param syntax -->
-
-<app-signup-reactive-form/>
-<app-add-new-course-using-form-array/>
+<h1>Http Client</h1>
+<app-post>
