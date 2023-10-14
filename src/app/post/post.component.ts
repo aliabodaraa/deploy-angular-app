@@ -30,7 +30,7 @@ export class PostComponent implements OnInit {
     let post: { id?: number; title: string } = { title: titleInput.value };
     this.posts.splice(0, 0, post);
     this.service.createService(post).subscribe({
-      next: (response: { id: number }) => {
+      next: (response) => {
         post['id'] = response.id; //normally the server return an object with 'id' property
       },
       error: (error: AppError) => {
