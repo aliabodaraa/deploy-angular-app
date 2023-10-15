@@ -1,3 +1,7 @@
+<h2>Home Page</h2>
+<p *ngIf="authService.isLoggedIn()">current user name : <b>{{authService.currentUser().name}}</b></p>
 <p>
-  home works!
+  <li routerLinkActive="active current" *ngIf="authService.isLoggedIn()&& authService.currentUser().admin"><a routerLink="/admin">admin</a></li>
+  <li routerLinkActive="active current" *ngIf="!authService.isLoggedIn()"><a routerLink="/login">login</a></li>
+  <li routerLinkActive="active current" *ngIf="authService.isLoggedIn()"><a (click)="authService.logout()">logout</a></li>
 </p>

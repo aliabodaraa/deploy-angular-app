@@ -1,10 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { BadInput } from '../errors/BadInput';
 import { AppError } from '../errors/AppError';
 import { NotFoundError } from '../errors/NotFoundError';
-import { HttpErrorResponse } from '@angular/common/http';
 
 export class DataService {
   constructor(private url: string, private http: HttpClient) {}

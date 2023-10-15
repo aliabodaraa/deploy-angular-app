@@ -1,0 +1,8 @@
+
+<h1>Admin Page</h1>
+<b> this page is required aimed to authorized person if your request does not have bearer token you can't access to this page</b>
+<h4>orders :</h4>
+
+<ul>
+  <li *ngFor="let order of orders">{{ order.name }}</li>
+</ul>
